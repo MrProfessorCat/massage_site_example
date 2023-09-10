@@ -1,4 +1,4 @@
-# Пример сайта-визитки массажного салога
+# Пример сайта-визитки массажного салона
 
 **Source Code**: <a href="https://github.com/MrProfessorCat/massage_site_example" target="_blank">massage_site_example</a>
 
