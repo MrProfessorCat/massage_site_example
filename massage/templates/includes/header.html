@@ -1,0 +1,50 @@
+{% load static %}
+
+<nav class="navbar navbar-dark navbar-expand-md d-flex flex-wrap mb-0 pb-0">    
+  <img class="title-block" src="{% static 'img/title_img.jpg' %}">
+  <div class="container-fluid menu-position">
+
+    <button class="navbar-toggler ms-auto custom-toggler button-position"
+            type="button"
+            data-bs-target="#offcanvas"
+            aria-controls="offcanvasNavbar"
+            id="bs_button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bgg-dark"
+         data-bs-scroll="true"
+         data-bs-backdrop="false"
+         tabindex="-1" id="offcanvas"
+         aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title underline fw-bold" 
+            id="offcanvasNavbarLabel"><span class="white-color">MASSAGE</span> <span class="ocher-color">SALON</span>
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      
+      <div class="offcanvas-body justify-content-center mt-3">
+        <ul class="navbar-nav">
+          {% url 'massage_salon:index' as url %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == url %}nav-link-current{% endif %}" href="{% url 'massage_salon:index' %}">Главная</a>
+          </li>
+  
+          {% url 'massage_salon:about' as url %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == url %}nav-link-current{% endif %}" href="{% url 'massage_salon:about' %}">О мастере</a>
+          </li>
+
+          {% url 'massage_salon:prices' as url %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == url %}nav-link-current{% endif %}" href="{% url 'massage_salon:prices' %}">Услуги и цены</a>
+          </li>
+  
+          <li class="nav-item" data-bs-toggle="offcanvas">
+            <a class="nav-link" href="{% url 'massage_salon:index' %}#anchor-contacts">Контакты</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>   
+</nav>
